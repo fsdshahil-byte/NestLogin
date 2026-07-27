@@ -1,25 +1,25 @@
 # NestLogin
 
-A simple full-stack authentication application built using **NestJS**, **React**, and **PostgreSQL**. This project demonstrates user registration, secure login with password hashing, and frontend-backend integration.
+A full-stack authentication application built with **NestJS**, **React**, and **PostgreSQL**. This project demonstrates the fundamentals of NestJS by implementing user registration, secure login with encrypted passwords, and frontend-backend integration.
 
 ---
 
-## Features
+## 🚀 Features
 
 * User Registration
-* User Login
+* User Login Authentication
 * Password Hashing using bcrypt
-* Request Validation with DTOs
+* DTO Validation using class-validator
 * PostgreSQL Database Integration
 * TypeORM ORM
 * React Frontend
 * Axios API Integration
-* Dashboard after Successful Login
+* Dashboard Navigation after Login
 * CORS Configuration
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Backend
 
@@ -40,34 +40,39 @@ A simple full-stack authentication application built using **NestJS**, **React**
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
-Backend (NestJS)
-├── auth
-├── users
-├── app.module.ts
-├── main.ts
-└── ...
-
-Frontend (React)
-├── pages
-│   ├── Login.jsx
-│   └── Dashboard.jsx
-├── api
-│   └── api.js
-└── App.jsx
+NestLogin
+│
+├── backend
+│   ├── src
+│   │   ├── auth
+│   │   ├── users
+│   │   ├── app.module.ts
+│   │   └── main.ts
+│   └── package.json
+│
+├── frontend
+│   ├── src
+│   │   ├── pages
+│   │   ├── services
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── package.json
+│
+└── README.md
 ```
 
 ---
 
-## Authentication Flow
+## 🔄 Authentication Flow
 
 ```text
 React Login Page
         │
         ▼
-Axios Request
+Axios API Request
         │
         ▼
 NestJS Controller
@@ -76,13 +81,16 @@ NestJS Controller
 Authentication Service
         │
         ▼
+Users Service
+        │
+        ▼
 PostgreSQL Database
         │
         ▼
-Validate Credentials
+Password Verification (bcrypt)
         │
         ▼
-Login Success
+Login Successful
         │
         ▼
 Dashboard
@@ -90,37 +98,41 @@ Dashboard
 
 ---
 
-## Installation
+## ⚙️ Installation
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/NestLogin.git
+git clone https://github.com/fsdshahil-byte/NestLogin.git
 ```
+
+---
 
 ### Backend Setup
 
 ```bash
-cd nest-auth
+cd backend
 npm install
 npm run start:dev
 ```
 
-Backend runs on:
+Backend runs at:
 
 ```text
 http://localhost:3000
 ```
 
+---
+
 ### Frontend Setup
 
 ```bash
-cd nest-login-frontend
+cd frontend
 npm install
 npm run dev
 ```
 
-Frontend runs on:
+Frontend runs at:
 
 ```text
 http://localhost:5173
@@ -128,15 +140,15 @@ http://localhost:5173
 
 ---
 
-## API Endpoints
+## 📌 API Endpoints
 
-### Register
+### Register User
 
 ```http
 POST /users/register
 ```
 
-### Login
+### Login User
 
 ```http
 POST /auth/login
@@ -144,38 +156,69 @@ POST /auth/login
 
 ---
 
-## Learning Outcomes
+## 🎯 Learning Outcomes
 
 Through this project, I learned:
 
 * NestJS project structure
-* Modules, Controllers, and Services
-* DTO validation
-* Entity creation with TypeORM
-* PostgreSQL integration
-* Password hashing using bcrypt
-* Authentication flow
-* React and NestJS integration
-* API communication using Axios
-* Basic routing with React Router
+* Modules
+* Controllers
+* Services
+* DTO Validation
+* Entity Creation
+* TypeORM
+* PostgreSQL Integration
+* Password Hashing using bcrypt
+* Authentication Flow
+* Exception Handling
+* React Frontend Integration
+* Axios API Communication
+* React Router Navigation
+* Full-Stack Application Development
 
 ---
 
-## Future Improvements
+## 📸 Screenshots
+
+Add screenshots here after uploading them.
+
+### Login Page
+
+```
+screenshots/login.png
+```
+
+### Dashboard
+
+```
+screenshots/dashboard.png
+```
+
+---
+
+## 🔮 Future Improvements
 
 * JWT Authentication
 * Protected Routes
 * Role-Based Authorization
 * Refresh Tokens
+* User Profile
+* Logout
 * Environment Variables
 * Swagger API Documentation
-* Logout Functionality
-* User Profile Page
+* Responsive UI
+* Deployment
 
 ---
 
-## Author
+## 👨‍💻 Author
 
 **Shahil M**
 
-This project was developed as part of learning **NestJS** and implementing a basic full-stack authentication system using **React**, **NestJS**, and **PostgreSQL**.
+GitHub: https://github.com/fsdshahil-byte
+
+---
+
+## 📄 License
+
+This project was created for learning purposes to understand NestJS fundamentals and full-stack authentication using React and PostgreSQL.
