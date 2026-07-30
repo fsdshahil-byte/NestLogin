@@ -1,53 +1,65 @@
-# NestLogin
+# Student Management System
 
-A full-stack authentication application built with **NestJS**, **React**, and **PostgreSQL**. This project demonstrates the fundamentals of NestJS by implementing user registration, secure login with encrypted passwords, and frontend-backend integration.
+A full-stack **Student Management System** built with **NestJS**, **React**, and **PostgreSQL**. This project demonstrates authentication, student management (CRUD), frontend-backend integration, and a modern responsive dashboard.
 
 ---
 
 ## 🚀 Features
 
-* User Registration
-* User Login Authentication
-* Password Hashing using bcrypt
-* DTO Validation using class-validator
-* PostgreSQL Database Integration
-* TypeORM ORM
-* React Frontend
-* Axios API Integration
-* Dashboard Navigation after Login
-* CORS Configuration
+### Authentication
+- User Login
+- Password Hashing using bcrypt
+- Dashboard Navigation
+- Logout
+
+### Student Management
+- Add Student
+- Edit Student
+- Delete Student
+- Search Students
+- Student Statistics Dashboard
+- Popup Student Form
+- Responsive Sidebar
+- Responsive Dashboard UI
+
+### Backend
+- NestJS REST API
+- DTO Validation
+- PostgreSQL Database
+- TypeORM Integration
+- CORS Configuration
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Backend
-
-* NestJS
-* TypeScript
-* TypeORM
-* PostgreSQL
-* bcrypt
-* class-validator
-* class-transformer
+- NestJS
+- TypeScript
+- PostgreSQL
+- TypeORM
+- bcrypt
+- class-validator
+- class-transformer
 
 ### Frontend
-
-* React
-* Vite
-* Axios
-* React Router DOM
+- React
+- Vite
+- React Router DOM
+- Axios
+- Inline CSS
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-NestLogin
+Student-Management-System
 │
 ├── backend
 │   ├── src
 │   │   ├── auth
+│   │   ├── students
 │   │   ├── users
 │   │   ├── app.module.ts
 │   │   └── main.ts
@@ -55,10 +67,21 @@ NestLogin
 │
 ├── frontend
 │   ├── src
+│   │   ├── components
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── StudentForm.jsx
+│   │   │   └── StudentTable.jsx
+│   │   │
 │   │   ├── pages
+│   │   │   ├── Login.jsx
+│   │   │   └── Dashboard.jsx
+│   │   │
 │   │   ├── services
+│   │   │   └── api.js
+│   │   │
 │   │   ├── App.jsx
 │   │   └── main.jsx
+│   │
 │   └── package.json
 │
 └── README.md
@@ -66,41 +89,34 @@ NestLogin
 
 ---
 
-## 🔄 Authentication Flow
+## 🔄 Application Flow
 
 ```text
-React Login Page
-        │
-        ▼
-Axios API Request
-        │
-        ▼
-NestJS Controller
-        │
-        ▼
-Authentication Service
-        │
-        ▼
-Users Service
-        │
-        ▼
-PostgreSQL Database
-        │
-        ▼
-Password Verification (bcrypt)
-        │
-        ▼
-Login Successful
-        │
-        ▼
+Login Page
+      │
+      ▼
+NestJS Authentication
+      │
+      ▼
 Dashboard
+      │
+      ├──────────────┐
+      ▼              ▼
+Student Form     Student Table
+      │              │
+      ▼              ▼
+ Add / Edit      Search / Delete
+      │              │
+      └──────┬───────┘
+             ▼
+     PostgreSQL Database
 ```
 
 ---
 
 ## ⚙️ Installation
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/fsdshahil-byte/NestLogin.git
@@ -108,7 +124,7 @@ git clone https://github.com/fsdshahil-byte/NestLogin.git
 
 ---
 
-### Backend Setup
+### Backend
 
 ```bash
 cd backend
@@ -116,7 +132,7 @@ npm install
 npm run start:dev
 ```
 
-Backend runs at:
+Backend runs on:
 
 ```text
 http://localhost:3000
@@ -124,7 +140,7 @@ http://localhost:3000
 
 ---
 
-### Frontend Setup
+### Frontend
 
 ```bash
 cd frontend
@@ -132,7 +148,7 @@ npm install
 npm run dev
 ```
 
-Frontend runs at:
+Frontend runs on:
 
 ```text
 http://localhost:5173
@@ -142,16 +158,21 @@ http://localhost:5173
 
 ## 📌 API Endpoints
 
-### Register User
-
-```http
-POST /users/register
-```
-
-### Login User
+### Authentication
 
 ```http
 POST /auth/login
+```
+
+---
+
+### Students
+
+```http
+GET    /students
+POST   /students
+PATCH  /students/:id
+DELETE /students/:id
 ```
 
 ---
@@ -160,27 +181,26 @@ POST /auth/login
 
 Through this project, I learned:
 
-* NestJS project structure
-* Modules
-* Controllers
-* Services
-* DTO Validation
-* Entity Creation
-* TypeORM
-* PostgreSQL Integration
-* Password Hashing using bcrypt
-* Authentication Flow
-* Exception Handling
-* React Frontend Integration
-* Axios API Communication
-* React Router Navigation
-* Full-Stack Application Development
+- NestJS Architecture
+- Modules
+- Controllers
+- Services
+- DTO Validation
+- CRUD Operations
+- TypeORM
+- PostgreSQL Integration
+- Password Hashing using bcrypt
+- Authentication
+- React Hooks
+- React Router
+- Axios API Integration
+- Component-Based Architecture
+- State Management using Hooks
+- Full-Stack Application Development
 
 ---
 
 ## 📸 Screenshots
-
-Add screenshots here after uploading them.
 
 ### Login Page
 
@@ -194,20 +214,27 @@ screenshots/login.png
 screenshots/dashboard.png
 ```
 
+### Student Management
+
+```
+screenshots/students.png
+```
+
 ---
 
 ## 🔮 Future Improvements
 
-* JWT Authentication
-* Protected Routes
-* Role-Based Authorization
-* Refresh Tokens
-* User Profile
-* Logout
-* Environment Variables
-* Swagger API Documentation
-* Responsive UI
-* Deployment
+- JWT Authentication
+- Protected Routes
+- Role-Based Authorization
+- Course Management
+- Trainer Management
+- Reports Dashboard
+- Pagination
+- Form Validation
+- Toast Notifications
+- Dark Mode
+- Deployment
 
 ---
 
@@ -221,4 +248,4 @@ GitHub: https://github.com/fsdshahil-byte
 
 ## 📄 License
 
-This project was created for learning purposes to understand NestJS fundamentals and full-stack authentication using React and PostgreSQL.
+This project was developed as a learning project to understand full-stack web development using **NestJS**, **React**, and **PostgreSQL**, while implementing authentication and student management features.
